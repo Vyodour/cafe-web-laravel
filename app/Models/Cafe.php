@@ -41,4 +41,9 @@ class Cafe extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
 }
