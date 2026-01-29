@@ -1,59 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
 </p>
 
-## About Laravel
+<p align="center">
+    <!-- Laravel Version -->
+    <img src="https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel Version">
+    <!-- PHP Version -->
+    <img src="https://img.shields.io/badge/PHP-8.2%2B-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP Version">
+    <!-- Testing Status -->
+    <img src="https://img.shields.io/badge/testing-passed-success?style=for-the-badge&logo=github-actions&logoColor=white" alt="Testing Status">
+    <!-- License -->
+    <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="License">
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# ☕ Web Kafe - Online Cafe Ordering System
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Web Kafe** is a web-based application built using the **Laravel** framework to streamline cafe menu management and ordering. The application serves two main roles: **Admin** for data management (products, categories, cashier) and **Student/Visitor** for placing orders.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This application aims to digitize the food and beverage ordering process in school environments or cafes, complete with digital payment integration.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 🚀 Key Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 👑 Admin (Administrator) & Cashier
+- **Dashboard**: View sales statistics and order summaries.
+- **Product Management**: Add, edit, and delete food/beverage items with images.
+- **Category Management**: Group products by category (e.g., Heavy Meals, Drinks, Snacks).
+- **Table Management**: Manage table numbers for *dine-in* orders.
+- **Order Management**: View incoming orders, process, and complete them.
+- **Transaction Reports**: View sales transaction history.
+- **Cafe Settings**: Manage cafe profile.
 
-## Laravel Sponsors
+### 👤 Visitor (Student/User)
+- **Menu Catalog**: Browse available menus with an attractive interface.
+- **Search Cafe**: Choose a cafe (if multi-tenant) or menu category.
+- **Shopping Cart**: Add items to the cart before checkout.
+- **Checkout & Payment**: Place orders and pay (integrated with Payment Gateways like Midtrans).
+- **Order History**: Track order status (Pending, Processing, Completed).
+- **Notifications**: Get updates on order status.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Technology Stack
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+- **Backend**: Laravel 11 / 12 (PHP Framework)
+- **Frontend**: Blade Templates, Tailwind CSS (Modern UI)
+- **Database**: MySQL
+- **Payment Gateway**: Midtrans
+- **Authentication**: Laravel Fortify
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 💻 Installation Guide (Beginner Friendly)
 
-## Code of Conduct
+Follow these steps to run the project on your local machine. Ensure you have **XAMPP** (for PHP & MySQL), **Composer**, and **Node.js** installed.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1. Clone Project
+Download or clone this project to your computer. Open your terminal (CMD/Git Bash) and run:
+```bash
+git clone https://github.com/your-username/web-kafe.git
+cd web-kafe
+```
 
-## Security Vulnerabilities
+### 2. Install PHP Dependencies (Laravel)
+Install all required PHP libraries using Composer:
+```bash
+composer install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 3. Install Frontend Dependencies (CSS/JS)
+Install libraries for the frontend (Tailwind, etc.) and compile assets:
+```bash
+npm install
+npm run build
+```
 
-## License
+### 4. Environment Configuration (.env)
+Copy the example configuration file to create a new `.env` file:
+```bash
+cp .env.example .env
+```
+Open the `.env` file with a text editor (Notepad/VS Code), find the **Database** section, and adjust it (usually looks like this for default XAMPP):
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=web_kafe  <-- Make sure you create a database with this name in phpMyAdmin
+DB_USERNAME=root
+DB_PASSWORD=
+```
+*Don't forget to set `MIDTRANS_SERVER_KEY` and `MIDTRANS_CLIENT_KEY` if you want the payment feature to work.*
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Generate Key & Setup Database
+Run the following commands to generate the application security key and create tables in the database:
+```bash
+php artisan key:generate
+php artisan migrate --seed
+```
+*(The `--seed` option will populate initial/dummy data like the default Admin account)*
+
+### 6. Run Application
+Now the project is ready to run! Type this command in your terminal:
+```bash
+php artisan serve
+```
+Open your browser (Chrome/Edge) and access the URL shown, typically:
+**http://127.0.0.1:8000**
+
+---
+
+## 🧪 Testing
+
+This project has undergone testing to ensure features work correctly.
+To run manual tests (Unit/Feature tests):
+```bash
+php artisan test
+```
+
+---
+
+## 📄 License
+
+Web Kafe is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
