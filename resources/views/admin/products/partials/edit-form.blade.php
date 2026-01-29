@@ -44,7 +44,11 @@
                     <!-- Image Preview Container -->
                     <div id="image-preview-container" class="relative {{ $product->image ? 'block' : 'hidden' }} mb-4 w-max group">
                          <!-- Removed JS from here, using global function -->
+<<<<<<< HEAD
                         <img id="image-preview" src="{{ $product->image ? Storage::url($product->image) : '' }}" alt="Product Preview" class="h-48 w-48 rounded-lg object-cover border-2 border-border shadow-sm">
+=======
+                        <img id="image-preview" src="{{ $product->image ? $product->image_url : '' }}" alt="Product Preview" class="h-48 w-48 rounded-lg object-cover border-2 border-border shadow-sm">
+>>>>>>> 2a1bc64 (fix: conflict in products appearance)
                         
                         <!-- Delete Button (X) -->
                         <button type="button" onclick="window.removeImage()" class="absolute -top-3 -right-3 h-8 w-8 bg-destructive text-destructive-foreground rounded-full hover:bg-destructive/90 transition-all shadow-md flex items-center justify-center ring-2 ring-background focus:outline-none focus:ring-ring">

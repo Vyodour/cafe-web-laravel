@@ -25,7 +25,11 @@
         <tr class="border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted">
             <td class="p-4 align-middle">
                 @if($product->image)
+<<<<<<< HEAD
                     <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="h-10 w-10 rounded-md object-cover cursor-pointer hover:scale-110 transition-transform" @click="viewImage('{{ asset('storage/' . $product->image) }}')">
+=======
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="h-10 w-10 rounded-md object-cover cursor-pointer hover:scale-110 transition-transform" @click="viewImage('{{ $product->image_url }}')">
+>>>>>>> 2a1bc64 (fix: conflict in products appearance)
                 @else
                     <span class="flex h-10 w-10 items-center justify-center rounded-md bg-muted text-xs text-muted-foreground">No Img</span>
                 @endif
