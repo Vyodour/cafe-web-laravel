@@ -49,4 +49,17 @@ class Product extends Model
     {
         return $this->hasMany(OrderItem::class);
     }
+
+    public function getImageUrlAttribute(): string
+    {
+        if (empty($this->image)) {
+            return 'https://via.placeholder.com/600x400';
+        }
+
+        if (filter_var($this->image, FILTER_VALIDATE_URL)) {
+            return $this->image;
+        }
+
+        return asset('storage/' . $this->image);
+    }
 }
