@@ -10,13 +10,8 @@
             
             <div class="space-y-4">
                 <div class="grid gap-2">
-                    <x-ui.label for="number" value="Table Number" />
-                    <x-ui.input id="number" type="number" name="number" :value="old('number')" required autofocus />
-                </div>
-
-                <div class="grid gap-2">
-                    <x-ui.label for="capacity" value="Capacity (Seats)" />
-                    <x-ui.input id="capacity" type="number" name="capacity" :value="old('capacity')" required min="1" />
+                    <x-ui.label for="table_number" value="Table Number" />
+                    <x-ui.input id="table_number" type="number" name="table_number" :value="old('table_number')" required autofocus />
                 </div>
 
                 <div class="grid gap-2">

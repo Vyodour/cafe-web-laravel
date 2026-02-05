@@ -11,16 +11,9 @@
             
             <div class="space-y-4">
                 <div class="grid gap-2">
-                    <x-ui.label for="number" value="Table Number" />
-                    <x-ui.input id="number" type="number" name="number" 
-                        value="{{ old('number', $table->table_number) }}" required autofocus />
-                </div>
-
-                <div class="grid gap-2">
-                    <x-ui.label for="capacity" value="Capacity (Seats)" />
-                    <!-- Note: Capacity is technically not in DB migration as per discussion, but kept in form for potentially future use or as metadata if column exists -->
-                    <x-ui.input id="capacity" type="number" name="capacity" 
-                        value="{{ old('capacity', $table->capacity ?? 4) }}" required min="1" />
+                    <x-ui.label for="table_number" value="Table Number" />
+                    <x-ui.input id="table_number" type="number" name="table_number" 
+                        value="{{ old('table_number', $table->table_number) }}" required autofocus />
                 </div>
 
                 <div class="grid gap-2">
