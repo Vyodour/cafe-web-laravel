@@ -29,17 +29,15 @@ class TableController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'number' => 'required|integer|unique:tables,table_number', // Fixed column name in validation
+            'table_number' => 'required|integer|unique:tables,table_number',
             'status' => 'required|in:active,occupied,inactive', 
-            'capacity' => 'required|integer|min:1',
         ]);
 
         $table = Table::create([
-            'table_number' => $validated['number'],
+            'table_number' => $validated['table_number'],
             'status' => $validated['status'] == 'active' ? 'available' : $validated['status'], 
             'qr_code_token' => \Illuminate\Support\Str::random(32),
             'cafe_id' => \App\Models\Cafe::first()->id ?? 1,
-            // 'capacity' => $validated['capacity'], // Removed as column doesn't exist in migration
         ]);
         
         $this->logAction('create_table', ['table_id' => $table->id, 'number' => $table->table_number]);
@@ -64,12 +62,14 @@ class TableController extends Controller
     public function update(Request $request, Table $table)
     {
         $validated = $request->validate([
-            'number' => 'required|integer|unique:tables,number,' . $table->id,
+            'table_number' => 'required|integer|unique:tables,table_number,' . $table->id,
             'status' => 'required|in:active,inactive,occupied',
-            'capacity' => 'required|integer|min:1',
         ]);
 
-        $table->update($validated);
+        $table->update([
+            'table_number' => $validated['table_number'],
+            'status' => $validated['status'] == 'active' ? 'available' : $validated['status'],
+        ]);
 
         $this->logAction('update_table', ['table_id' => $table->id, 'changes' => $table->getChanges()]);
 
