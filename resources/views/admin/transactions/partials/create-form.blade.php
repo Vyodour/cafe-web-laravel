@@ -21,7 +21,7 @@
 
                 <div class="grid gap-2">
                     <x-ui.label for="amount" value="Amount Paid ($)" />
-                    <x-ui.input id="amount" type="number" step="0.01" name="amount" :value="old('amount')" required />
+                    <x-ui.input id="amount" type="number" step="0.01" name="amount_paid" :value="old('amount_paid')" required />
                 </div>
 
                 <div class="grid gap-2">
