@@ -2,11 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
              @if($product->image)
-<<<<<<< HEAD
-                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="w-full h-auto rounded-lg shadow-md object-cover">
-=======
                 <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="w-full h-auto rounded-lg shadow-md object-cover">
->>>>>>> 2a1bc64 (fix: conflict in products appearance)
             @else
                 <div class="w-full h-64 bg-muted flex items-center justify-center rounded-lg shadow-md text-muted-foreground">
                     No Image Available

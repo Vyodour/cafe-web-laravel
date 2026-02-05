@@ -36,13 +36,29 @@
                 
                 <div class="grid gap-2">
                     <x-ui.label for="image" value="Product Image" />
-                    <x-ui.input id="image" type="file" name="image" class="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"/>
+                    
+                    <!-- Hidden input to signal image deletion (consistent with edit form, though less critical here) -->
+                    <input type="hidden" id="delete_image" name="delete_image" value="0">
+
+                    <!-- Image Preview Container (Hidden by default) -->
+                    <div id="image-preview-container" class="relative hidden mb-4 w-max group">
+                        <img id="image-preview" src="" alt="Product Preview" class="h-48 w-48 rounded-lg object-cover border-2 border-border shadow-sm">
+                        
+                        <!-- Delete Button (X) -->
+                        <button type="button" onclick="window.removeImage()" class="absolute -top-3 -right-3 h-8 w-8 bg-destructive text-destructive-foreground rounded-full hover:bg-destructive/90 transition-all shadow-md flex items-center justify-center ring-2 ring-background focus:outline-none focus:ring-ring">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <x-ui.input id="image" type="file" name="image" class="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90" onchange="window.previewImage(event)"/>
                 </div>
 
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 pt-2">
                     <input type="hidden" name="is_available" value="0">
-                     <input type="checkbox" id="is_available" name="is_available" value="1" class="h-4 w-4 rounded border-primary text-primary focus:ring-primary" checked>
-                    <x-ui.label for="is_available" value="Available for order" />
+                    <x-ui.toggle name="is_available" id="is_available" :checked="true" label="Available for order" />
                 </div>
             </div>
 

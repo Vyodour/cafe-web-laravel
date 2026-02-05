@@ -44,11 +44,7 @@
                     <!-- Image Preview Container -->
                     <div id="image-preview-container" class="relative {{ $product->image ? 'block' : 'hidden' }} mb-4 w-max group">
                          <!-- Removed JS from here, using global function -->
-<<<<<<< HEAD
-                        <img id="image-preview" src="{{ $product->image ? Storage::url($product->image) : '' }}" alt="Product Preview" class="h-48 w-48 rounded-lg object-cover border-2 border-border shadow-sm">
-=======
                         <img id="image-preview" src="{{ $product->image ? $product->image_url : '' }}" alt="Product Preview" class="h-48 w-48 rounded-lg object-cover border-2 border-border shadow-sm">
->>>>>>> 2a1bc64 (fix: conflict in products appearance)
                         
                         <!-- Delete Button (X) -->
                         <button type="button" onclick="window.removeImage()" class="absolute -top-3 -right-3 h-8 w-8 bg-destructive text-destructive-foreground rounded-full hover:bg-destructive/90 transition-all shadow-md flex items-center justify-center ring-2 ring-background focus:outline-none focus:ring-ring">
@@ -62,10 +58,9 @@
                     <x-ui.input id="image" type="file" name="image" class="file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary file:text-primary-foreground hover:file:bg-primary/90" onchange="window.previewImage(event)"/>
                 </div>
 
-                <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2 pt-2">
                     <input type="hidden" name="is_available" value="0">
-                     <input type="checkbox" id="is_available" name="is_available" value="1" class="h-4 w-4 rounded border-primary text-primary focus:ring-primary" {{ $product->is_available ? 'checked' : '' }}>
-                    <x-ui.label for="is_available" value="Available for order" />
+                    <x-ui.toggle name="is_available" id="is_available" :checked="$product->is_available" label="Available for order" />
                 </div>
             </div>
 
